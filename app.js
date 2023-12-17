@@ -5,7 +5,7 @@ import { PORT } from "./config.js"
 import bookRouter from './routes/routes.js'
 
 
-const app = express()
+export const app = express()
 app.get('/', (_req, res) =>{
 res.redirect('/api/books');
 })
@@ -21,6 +21,7 @@ try{
 console.log(`error:' ${error}`)
 	}
 
-app.listen(PORT,() =>{
+
+    export const server = app.listen(PORT,() =>{
 console.log(`🚀server up in http://localhost:${PORT}/`)
 } )
