@@ -36,7 +36,7 @@ export const createBook= async(req, res) => {
 export const updateBook = async(req,res) =>{
 	try{ 
 			await BookModel.update(req.body, { where:{id:req.params.id}})
-			res.json.status(201)({message: "has been update successfully!"})
+			res.status(201).json({message: "has been update successfully!"})
 		}
 	catch(error){
 			res.status(500).json({message: error.message})

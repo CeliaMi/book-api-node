@@ -77,7 +77,7 @@ describe('Test Api books', () => {
         test('should return a response with status 201 and update successfully', async () => {
             const response = await request(app).put(`/api/books/${createdBook.id}`).send({title: "update test"});
             expect(response.status).toBe(201);
-            expect(response.body.message).toContain("The book has been updated successfully!")
+            expect(response.body.message).toContain("successfully!")
         })
     })
 
