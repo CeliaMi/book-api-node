@@ -1,7 +1,7 @@
 import BookModel from '../models/BookModel.js'
 
 //GET all
-export const getAllBooks = async(req, res) => {
+export const getAllBooks = async(_req, res) => {
 	try{
 			const books = await BookModel.findAll()
 			res.json(books)
@@ -12,7 +12,9 @@ export const getAllBooks = async(req, res) => {
 //GET ones
 export const getBook = async(req, res) => {
 	try{
-			const book = await BookModel.findAll({ where:{id:req.params.id} })
+			const book = await BookModel.findOne({ where:{id:req.params.id} })
+            if (book === null) {
+                console.log('Not found!');}
 			res.json(book)
 	}catch (error){
 			res.json({message: error.message})
