@@ -29,7 +29,17 @@ DB_USER =
 npm start
 ```
 
-Cada uno de los endpoints te llevará a una acción diferente, puedes probarla usando POSTMAN o enlazandola con el front end que tienes en otro de mis repos ( consulta su propio readme para más info)
+Cada uno de los endpoints te llevará a una acción diferente, puedes probarla usando POSTMAN 
+
+> GET all http://localhost:3000/api/books <br/>
+> GET one http://localhost:3000/api/books/id <br/>
+> POST http://localhost:3000/api/books <br/>
+> PUT http://localhost:3000/api/books/id <br/>
+> DELTE http://localhost:3000/api/books/id <br/>
+
+
+
+también puedes enlazandarla con el front end que tienes en otro de mis repos ( consulta su propio readme para más info)
 
 ```sh
 git clone https://github.com/CeliaMi/book-app-react.git
@@ -45,7 +55,7 @@ Aquí te dejo un ejemplo de los datos👀
     },
 ```
 
-##4️⃣ los test🧪
+## 4️⃣ los test🧪
 Abre una nueva terminal y pon el siguiente comando
 ```sh
 npm run test
