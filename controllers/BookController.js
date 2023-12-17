@@ -4,7 +4,7 @@ import BookModel from '../models/BookModel.js'
 export const getAllBooks = async(_req, res) => {
 	try{
 			const books = await BookModel.findAll()
-			res.json(books)
+			res.status(200).json(books)
 	}catch (error){
 			res.json({message: error.message})
 	}}
@@ -15,20 +15,20 @@ export const getBook = async(req, res) => {
 			const book = await BookModel.findOne({ where:{id:req.params.id} })
             if (book === null) {
                 console.log('Not found!');}
-			res.json(book)
+			res.status(200).json(book)
 	}catch (error){
 			res.json({message: error.message})
 	}
 }
 
 //CREATE
-export const createBook= async(req, res, next) => {
+export const createBook= async(req, res) => {
 	try{
 			await BookModel.create(req.body)
-			res.json({message: "has been created successfully!"})
+			res.status(201).json({message: "has been created successfully!"})
 	}catch (error){
-			res.json({message: error.message})
-            return next(error)
+			res.status(500).json({message: error.message})
+            
 	}
 }
 
@@ -36,10 +36,10 @@ export const createBook= async(req, res, next) => {
 export const updateBook = async(req,res) =>{
 	try{ 
 			await BookModel.update(req.body, { where:{id:req.params.id}})
-			res.json({message: "has been update successfully!"})
+			res.json.status(200)({message: "has been update successfully!"})
 		}
 	catch(error){
-			res.json({message: error.message})
+			res.status(500).json({message: error.message})
 		}
 	}
 
@@ -47,7 +47,7 @@ export const updateBook = async(req,res) =>{
 export const deleteBook = async (req, res) => {
 	try{
 			await BookModel.destroy({ where:{id:req.params.id}})
-			res.json({message: "has been delete successfully!"})
+			res.status(204).json({message: "has been delete successfully!"})
 	} catch{
 			res.json({message: error.message})
 	}
