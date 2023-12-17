@@ -95,7 +95,7 @@ describe('Test Api books', () => {
         });
 
         test('should return a response with status 200 and type json', () => {
-            expect(response.status).toBe(204);
+            expect(response.status).toBe(200);
             expect(response.headers['content-type']).toContain('json');
         });
 
