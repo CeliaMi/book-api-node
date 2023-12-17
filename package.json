@@ -2,7 +2,7 @@
   "name": "book-api-node",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "type": "module",
   "scripts": {
     "start": "cross-env NODE_ENV=development node app.js",

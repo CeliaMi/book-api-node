@@ -1,6 +1,7 @@
 import express from "express";
 import cors from 'cors'
 import db from "./database/db.js"
+import { PORT } from "./config.js"
 
 
 const app = express()
@@ -18,6 +19,6 @@ try{
 console.log(`error:' ${error}`)
 	}
 
-app.listen(8000,() =>{
-console.log('🚀server up in http://localhost:8000/')
+app.listen(PORT,() =>{
+console.log(`🚀server up in http://localhost:${PORT}/`)
 } )
