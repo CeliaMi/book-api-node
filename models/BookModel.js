@@ -11,7 +11,6 @@ const BookModel = db.define('books', {
     timestamps: false
 });
 
-await sequelize.sync();
-console.log("All models were synchronized successfully.");
+
 
 export default BookModel
