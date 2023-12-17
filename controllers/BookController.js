@@ -1,6 +1,6 @@
 import BookModel from '../models/BookModel.js'
 
-//GET
+//GET all
 export const getAllBooks = async(req, res) => {
 	try{
 			const books = await BookModel.findAll()
@@ -9,7 +9,7 @@ export const getAllBooks = async(req, res) => {
 			res.json({message: error.message})
 	}}
 
-//GET
+//GET ones
 export const getBook = async(req, res) => {
 	try{
 			const book = await BookModel.findAll({ where:{id:req.params.id} })
