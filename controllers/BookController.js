@@ -22,12 +22,13 @@ export const getBook = async(req, res) => {
 }
 
 //CREATE
-export const createBook= async(req, res) => {
+export const createBook= async(req, res, next) => {
 	try{
 			await BookModel.create(req.body)
 			res.json({message: "has been created successfully!"})
 	}catch (error){
 			res.json({message: error.message})
+            return next(error)
 	}
 }
 
