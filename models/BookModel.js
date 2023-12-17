@@ -1,5 +1,5 @@
 import db from "../database/db.js";
-import { DataTypes } from "sequelize";
+import { DataTypes} from "sequelize";
 
 const BookModel = db.define('books', {
 
@@ -11,7 +11,7 @@ const BookModel = db.define('books', {
     timestamps: false
 });
 (async () => {
-    await sequelize.sync();
+    await db.sync();
     console.log("All models were synchronized successfully.");
   })();
 
