@@ -1,4 +1,5 @@
 import BookModel from '../models/BookModel.js'
+import { handleHttError } from '../handles/handleErrors.js'
 
 //GET all
 export const getAllBooks = async(_req, res) => {
@@ -6,7 +7,7 @@ export const getAllBooks = async(_req, res) => {
 			const books = await BookModel.findAll()
 			res.status(200).json(books)
 	}catch (error){
-			res.json({message: error.message})
+			handleHttError(res, "ERROR_GET_ITEMS")
 	}}
 
 //GET ones
@@ -27,7 +28,7 @@ export const createBook= async(req, res) => {
 			await BookModel.create(req.body)
 			res.status(201).json({message: "has been created successfully!"})
 	}catch (error){
-			res.status(500).json({message: error.message})
+			handleHttError(res, "ERROR_CREATE_ITEMS", 500)
             
 	}
 }
