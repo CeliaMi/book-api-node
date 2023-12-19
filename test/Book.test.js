@@ -13,8 +13,7 @@ describe('Test Api books', () => {
         })
 
         test('should return a response with status 200 and type json', async() => {
-            // const response = await request(app).get('/books').send()
-						expect(response.status).toBe(200);
+			expect(response.status).toBe(200);
             expect(response.headers['content-type']).toContain('json');
         })
 
@@ -40,7 +39,7 @@ describe('Test Api books', () => {
             const response = await request(app).post('/api/books').send(newBook)
             expect(response.status).toBe(201)
             expect(response.headers['content-type']).toContain('json')
-						//expect(response.body).toHaveLength(3); //para la segunda fase de la clase ( eliminando todo antes)
+
         });
 
         test('should return a message book created successfully', async () =>{

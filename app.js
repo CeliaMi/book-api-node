@@ -16,12 +16,12 @@ app.use('/api/books', bookRouter)
 
 try{
 	await db.authenticate()
-		console.log('conected to database🪐')
-	}catch{
-console.log(`error:' ${error}`)
+	console.log('conected to database🪐')
+	}catch(error){
+	console.log(`error:' ${error}`)
 	}
 
 
     export const server = app.listen(PORT,() =>{
-console.log(`🚀server up in http://localhost:${PORT}/`)
+	console.log(`🚀server up in http://localhost:${PORT}/`)
 } )
