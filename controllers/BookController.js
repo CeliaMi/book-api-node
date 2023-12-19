@@ -24,8 +24,8 @@ export const getBook = async(req, res) => {
 //CREATE
 export const createBook= async(req, res) => {
 	try{
-			await BookModel.create(req.body)
-			res.status(201).json({message: "has been created successfully!"})
+			const createdBook = await BookModel.create(req.body)
+			res.status(201).json({message: "has been created successfully!", response:createdBook})
 	}catch (error){
 			res.status(500).json({message: error.message})
             
