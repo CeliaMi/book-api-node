@@ -90,7 +90,7 @@ describe('Test Api books', () => {
                 book_description: "test",
             });
 
-        response = await request(app).delete(`/api/books/${createdBook.id}`).send();
+            response = await request(app).delete(`/api/books/${createdBook.id}`).send();
         });
 
         test('should return a response with status 200 and type json', () => {
@@ -99,7 +99,7 @@ describe('Test Api books', () => {
         });
 
         test('should return a message book deleted successfully', async () => {
-            expect(response.body.message).toContain("successfully");
+            expect(response.body.message).toContain("has been delete successfully!");
             const foundBook = await BookModel.findOne({where:{ id: createdBook.id}});
             expect(foundBook).toBeNull();
         })

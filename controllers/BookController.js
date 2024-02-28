@@ -49,7 +49,7 @@ export const updateBook = async (req, res) => {
 export const deleteBook = async (req, res) => {
 	try {
 		await BookModel.destroy({ where: { id: req.params.id } })
-		res.status(204).json({ message: "has been delete successfully!" })
+		res.status(200).json({ message: "has been delete successfully!" })
 	} catch {
 		res.json({ message: error.message })
 	}
