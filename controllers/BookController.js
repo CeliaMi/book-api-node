@@ -27,7 +27,7 @@ export const getBook = async (req, res) => {
 export const createBook = async (req, res) => {
 	try {
 		const createdBook = await BookModel.create(req.body)
-		res.status(201).json({ message: "has been created successfully!", response: createdBook })
+		res.status(201).json({ message: "has been created successfully!", pepito: createdBook })
 	} catch (error) {
 		res.status(500).json({ message: error.message })
 
@@ -49,7 +49,7 @@ export const updateBook = async (req, res) => {
 export const deleteBook = async (req, res) => {
 	try {
 		await BookModel.destroy({ where: { id: req.params.id } })
-		res.status(200).json({ message: "has been delete successfully!" })
+		res.status(204).json({ message: "has been delete successfully!" })
 	} catch {
 		res.json({ message: error.message })
 	}
