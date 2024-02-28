@@ -26,7 +26,7 @@ DB_USER =
 ## 3️⃣Levanta el servidor 
 🚀
 ```sh
-npm start
+npm run dev
 ```
 
 Cada uno de los endpoints te llevará a una acción diferente, puedes probarla usando POSTMAN 
